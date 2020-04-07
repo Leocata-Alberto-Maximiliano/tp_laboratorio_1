@@ -11,7 +11,7 @@ int getInt(char message[],char errorMessage[], int min, int max)
     printf("%s", message);
     scanf("%d", &value);
 
-     while(value <  min|| value > max )
+     while(value <  min || value > max )
     {
         printf("%s", errorMessage);
         scanf("%d", &value);
