@@ -3,41 +3,70 @@
 #include "Funciones-Matematicas.h"
 
 
-int sumar(int x, int y)
+float sumar(float x, float y)
 {
-    return x+y;
+    float suma = x+y;
+
+    return suma;
 }
 
-int restar(int x, int y)
+float restar(float x, float y)
 {
-    return x-y;
+    float resta = x-y;
+
+    return resta;
 }
 
-int multiplicar(int x, int y)
+float multiplicar(float x, float y)
 {
-    return x*y;
+    float multp = x*y;
+
+    return multp;
 }
 
 float dividir(float x, float y)
 {
-    float resultado;
+    float div = x/y;
 
-        /// VALIDAR DIVISION POR CER0
-
-    return resultado;
+    return div;
 }
 
 int factorizar(int x)
 {
     int i;
+    int resultado;
 
-    long long int resultado = 1;
-
-    for(i = x; i >= 1; i--)
+    if(x == 0)
     {
-
-        resultado = resultado * i;  /// REVISAR
+        resultado = 1;
     }
+
+    else
+    {
+        resultado = 1;
+
+        for(i = x; i >= 1; i--)
+        {
+
+            resultado = resultado * i;
+        }
+    }
+
 
     return resultado;
 }
+
+
+int esNumeroDecimal(float x)
+{
+    int tieneDecimales = 0; /// POR DEFECTO ASUMO QUE NO TIENE DECIMALES
+
+    if()
+    {
+        /// CODIGO
+    }
+
+    return tieneDecimales;
+
+}
+

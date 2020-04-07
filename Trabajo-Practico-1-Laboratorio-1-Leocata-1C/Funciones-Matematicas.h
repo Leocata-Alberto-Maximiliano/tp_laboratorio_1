@@ -4,30 +4,30 @@
 
 /** \brief REALIZA LA SUMA DE DOS NUMEROS
  *
- * \param int
- * \param int
- * \return int
+ * \param float
+ * \param float
+ * \return float
  *
  */
-int sumar(int, int);
+float sumar(float, float);
 
 /** \brief REALIZA LA RESTA DE DOS NUMEROS
  *
- * \param int
- * \param int
- * \return int
+ * \param float
+ * \param float
+ * \return float
  *
  */
-int restar(int, int);
+float restar(float, float);
 
 /** \brief REALIZA LA MULTIPLICACION DE DOS NUMEROS
  *
- * \param int
- * \param int
- * \return int
+ * \param float
+ * \param float
+ * \return float
  *
  */
-int multiplicar(int, int);
+float multiplicar(float, float);
 
 /** \brief REALIZA LA DIVISION ENTRE DOS NUMEROS
  *
@@ -40,8 +40,17 @@ float dividir(float, float);
 
 /** \brief CALCULA EL FACTORIAL DE UN NUMERO
  *
- * \param int
- * \return int
+ * \param float
+ * \return float
  *
  */
 int factorizar(int);
+
+
+/** \brief INDICA SI UN NUMERO POSEE CIFRAS DECIMALES
+ *
+ * \param float
+ * \return int
+ *
+ */
+int esNumeroDecimal(float);

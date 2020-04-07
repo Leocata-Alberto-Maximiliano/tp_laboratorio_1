@@ -7,19 +7,17 @@
 
 int main()
 {
-    int valueA;
-    int valueB;
+    float valueA;
+    float valueB;
 
-    int resultadoSuma;
-    int resultadoResta;
-    int resultadoMultiplicacion;
-    int resultadoDivision;
+    float resultadoSuma;
+    float resultadoResta;
+    float resultadoMultiplicacion;
+    float resultadoDivision;
     int resultadoFactorialA;
     int resultadoFactorialB;
 
     int option;
-    int operation;
-    int result;
 
     printf("\n***************\t\tBIENVENIDO A LA CALCULADORA\t\t***************\n\n\n");
 
@@ -39,125 +37,75 @@ int main()
 
         case 1:
 
-            valueA = getInt("\nINGRESE UN NUMERO: ", "\nERROR, INGRESE UN NUMERO VALIDO: ", MIN, MAX);
+            valueA = getFloat("\nINGRESE UN NUMERO: ", "\nERROR, INGRESE UN NUMERO VALIDO: \n\n", MIN, MAX);
+
             break;
 
         case 2:
 
-            valueB = getInt("\nINGRESE UN NUMERO: ", "\nERROR, INGRESE UN NUMERO VALIDO: ", MIN, MAX);
+            valueB = getFloat("\nINGRESE UN NUMERO: ", "\nERROR, INGRESE UN NUMERO VALIDO: \n\n", MIN, MAX);
+
             break;
 
         case 3:
 
-            printf("\n\t\t1.CALCULAR SUMA");
-            printf("\n\t\t2.CALCULAR RESTA");
-            printf("\n\t\t3.CALCULAR MULTIPLICACION");
-            printf("\n\t\t4.CALCULAR DIVISION");
-            printf("\n\t\t5.CALCULAR FACTORIAL");
-            printf("\n\t\t6.CALCULAR TODAS LAS OPERACIONES");
+            printf("\n\t\t***CALCULANDO OPERACIONES***\n\n");
 
-            operation = getInt("\n\n\t\tELIJA LA OPERACION A REALIZAR: ", "\n\t\tERROR, ELIJA UNA OPERACION VALIDA A REALIZAR: ", 1, 6);
-
-            switch(operation)
-            {
-
-            case 1: /// CALCULAR SUMA
-
-                resultadoSuma = sumar(valueA, valueB);
-                break;
-
-            case 2: /// CALCULAR RESTA
-
-                resultadoResta = restar(valueA, valueB);
-                break;
-
-            case 3: /// CALCULAR MULTIPLICACION
-
-                resultadoMultiplicacion = multiplicar(valueA, valueB);
-                break;
-
-            case 4: /// CALCULAR DIVISION
-
-                resultadoDivision = dividir(valueA, valueB);
-                break;
-
-            case 5: /// CALCULAR FACTORIAL
-
-                resultadoFactorialA = factorizar(valueA);
-                resultadoFactorialB = factorizar(valueB);
-                break;
-
-            case 6: /// CALCULAR TODAS LAS OPERACIONES A LA VEZ
-
-                resultadoSuma = sumar(valueA, valueB);
-                resultadoResta = restar(valueA, valueB);
-                resultadoMultiplicacion = multiplicar(valueA, valueB);
-                resultadoDivision = dividir(valueA, valueB);
-                resultadoFactorialA = factorizar(valueA);
-                resultadoFactorialB = factorizar(valueB);
-                break;
-
-            }
+            resultadoSuma = sumar(valueA, valueB);
+            resultadoResta = restar(valueA, valueB);
+            resultadoMultiplicacion = multiplicar(valueA, valueB);
+            resultadoDivision = dividir(valueA, valueB);
+            resultadoFactorialA = factorizar(valueA);
+            resultadoFactorialB = factorizar(valueB);
 
             break;
 
-
         case 4:
 
-            printf("\n\t\t1.MOSTRAR SUMA");
-            printf("\n\t\t2.MOSTRAR RESTA");
-            printf("\n\t\t3.MOSTRAR MULTIPLICACION");
-            printf("\n\t\t4.MOSTRAR DIVISION");
-            printf("\n\t\t5.MOSTRAR FACTORIAL");
-            printf("\n\t\t6.MOSTRAR TODOS LOS RESULTADOS");
+            printf("\n\t\t***INFORMANDO RESULTADOS***");
 
-            result = getInt("\n\n\t\tELIJA LA OPERACION A MOSTRAR: ", "\n\t\tERROR, ELIJA UNA OPERACION VALIDA PARA MOSTRAR: ", 1, 6);
+            printf("\n\n\t\t\t\tEL RESULTADO DE LA SUMA ES: %.4f", resultadoSuma);
+            printf("\n\n\t\t\t\tEL RESULTADO DE LA RESTA ES: %.4f", resultadoResta);
+            printf("\n\n\t\t\t\tEL RESULTADO DE LA MULTIPLICACION ES: %.4f", resultadoMultiplicacion);
 
-            switch(result)
+            if(valueB == 0)
             {
-            case 1: /// MOSTRAR SUMA
+                printf("\n\n\t\t\t\tEL RESULTADO DE LA DIVISION ES: ERROR, NO ES POSIBLE DIVIDIR POR CERO!!!");
+            }
 
-                printf("\n\n\t\t\t\tEL RESULTADO DE LA SUMA ES: %d\n\n", sumar(valueA, valueB));
-                break;
+            else
+            {
+                printf("\n\n\t\t\t\tEL RESULTADO DE LA DIVISION ES: %.4f", resultadoDivision);
+            }
 
-            case 2: /// MOSTRAR RESTA
 
-                printf("\n\t\t\t\tEL RESULTADO DE LA RESTA ES: %d\n\n", restar(valueA, valueB));
-                break;
+            if(valueA < 0 || esNumeroDecimal(valueA) == 1 || valueA > 16)
+            {
+                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL PRIMER NUMERO ES: ERROR, NO ES POSIBLE CALCULAR EL FACTORIAL!!!");
+            }
 
-            case 3: /// MOSTRAR MULTIPLICACION
-
-                printf("\n\t\t\t\tEL RESULTADO DE LA MULTIPLICACION ES: %d\n\n", multiplicar(valueA, valueB));
-                break;
-
-            case 4: /// MOSTRAR DIVISION
-
-                printf("\n\t\t\t\tEL RESULTADO DE LA DIVISION ES: %.2f\n\n", dividir(valueA, valueB));
-                break;
-
-            case 5: /// MOSTRAR FACTORIALES
-
-                printf("\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL PRIMER NUMERO ES: %d", factorizar(valueA));
-                printf("\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL SEGUNDO NUMERO ES: %d\n\n", factorizar(valueB));
-                break;
-
-            case 6: /// MOSTRAR TODAS LAS OPERACIONES A LA VEZ
-
-                printf("\n\n\t\t\t\tEL RESULTADO DE LA SUMA ES: %d", sumar(valueA, valueB));
-                printf("\n\n\t\t\t\tEL RESULTADO DE LA RESTA ES: %d", restar(valueA, valueB));
-                printf("\n\n\t\t\t\tEL RESULTADO DE LA MULTIPLICACION ES: %d", multiplicar(valueA, valueB));
-                printf("\n\n\t\t\t\tEL RESULTADO DE LA DIVISION ES: %.2f", dividir(valueA, valueB));
-                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL PRIMER NUMERO ES: %d", factorizar(valueA));
-                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL SEGUNDO NUMERO ES: %d\n\n", factorizar(valueB));
-                break;
+            else
+            {
+                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL PRIMER NUMERO ES: %d", resultadoFactorialA);
 
             }
 
+            if(valueB < 0 || esNumeroDecimal(valueB) == 1 || valueA > 16)
+            {
+                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL SEGUNDO NUMERO NUMERO ES: ERROR, NO ES POSIBLE CALCULAR EL FACTORIAL!!!\n\n");
+            }
+
+            else
+            {
+                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL SEGUNDO NUMERO ES: %d\n\n", resultadoFactorialB);
+
+            }
             break;
 
         case 5:
 
             printf("\n***************\t\tESTA SALIENDO DE LA CALCULADORA, HASTA PRONTO :)\t\t***************\n\n");
+
             break;
 
 
@@ -167,9 +115,8 @@ int main()
         system("cls");
 
     }
-
-
     while(option != 5);
 
     return 0;
 }
+

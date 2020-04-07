@@ -30,7 +30,7 @@ float getFloat(char message[],char errorMessage[], float min, float max)
 
      while(value <  min || value > max )
     {
-        printf("%s", errorMessage);            /// REVISAR
+        printf("%s", errorMessage);
         scanf("%f", &value);
     }
 
