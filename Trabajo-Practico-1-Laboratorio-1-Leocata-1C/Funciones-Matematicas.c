@@ -45,7 +45,7 @@ int factorizar(int x)
     {
         resultado = 1;
 
-        for(i = x; i >= 1; i--)
+        for(i = x; i > 0; i--)
         {
 
             resultado = resultado * i;
@@ -61,10 +61,15 @@ int esNumeroDecimal(float x)
 {
     int tieneDecimales = 0; /// POR DEFECTO ASUMO QUE NO TIENE DECIMALES
 
-    if()
+    float numDecimal = x;
+
+    int numEntero = (int)numDecimal;
+
+    if( numDecimal - numEntero > 0)
     {
-        /// CODIGO
+        tieneDecimales = 1;
     }
+
 
     return tieneDecimales;
 

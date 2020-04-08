@@ -64,9 +64,9 @@ int main()
 
             printf("\n\t\t***INFORMANDO RESULTADOS***");
 
-            printf("\n\n\t\t\t\tEL RESULTADO DE LA SUMA ES: %.4f", resultadoSuma);
-            printf("\n\n\t\t\t\tEL RESULTADO DE LA RESTA ES: %.4f", resultadoResta);
-            printf("\n\n\t\t\t\tEL RESULTADO DE LA MULTIPLICACION ES: %.4f", resultadoMultiplicacion);
+            printf("\n\n\t\t\t\tEL RESULTADO DE LA SUMA ES: %.2f", resultadoSuma);
+            printf("\n\n\t\t\t\tEL RESULTADO DE LA RESTA ES: %.2f", resultadoResta);
+            printf("\n\n\t\t\t\tEL RESULTADO DE LA MULTIPLICACION ES: %.2f", resultadoMultiplicacion);
 
             if(valueB == 0)
             {
@@ -75,7 +75,7 @@ int main()
 
             else
             {
-                printf("\n\n\t\t\t\tEL RESULTADO DE LA DIVISION ES: %.4f", resultadoDivision);
+                printf("\n\n\t\t\t\tEL RESULTADO DE LA DIVISION ES: %.2f", resultadoDivision);
             }
 
 
@@ -114,8 +114,10 @@ int main()
         system("pause");
         system("cls");
 
-    }
-    while(option != 5);
+
+    }while(option != 5);
+
+
 
     return 0;
 }
