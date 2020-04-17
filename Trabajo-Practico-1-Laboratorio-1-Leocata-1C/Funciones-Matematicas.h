@@ -44,7 +44,7 @@ float dividir(float, float);
  * \return float
  *
  */
-int factorizar(int);
+long long int factorizar(long long int);
 
 
 /** \brief INDICA SI UN NUMERO POSEE CIFRAS DECIMALES

@@ -14,8 +14,8 @@ int main()
     float resultadoResta;
     float resultadoMultiplicacion;
     float resultadoDivision;
-    int resultadoFactorialA;
-    int resultadoFactorialB;
+    long long int resultadoFactorialA;
+    long long int resultadoFactorialB;
 
     int option;
 
@@ -79,25 +79,25 @@ int main()
             }
 
 
-            if(valueA < 0 || esNumeroDecimal(valueA) == 1 || valueA > 16)
+            if(valueA < 0 || esNumeroDecimal(valueA) == 1 || valueA >= 32)
             {
                 printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL PRIMER NUMERO ES: ERROR, NO ES POSIBLE CALCULAR EL FACTORIAL!!!");
             }
 
             else
             {
-                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL PRIMER NUMERO ES: %d", resultadoFactorialA);
+                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL PRIMER NUMERO ES: %lld", resultadoFactorialA);
 
             }
 
-            if(valueB < 0 || esNumeroDecimal(valueB) == 1 || valueA > 16)
+            if(valueB < 0 || esNumeroDecimal(valueB) == 1 || valueA >= 32)
             {
                 printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL SEGUNDO NUMERO NUMERO ES: ERROR, NO ES POSIBLE CALCULAR EL FACTORIAL!!!\n\n");
             }
 
             else
             {
-                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL SEGUNDO NUMERO ES: %d\n\n", resultadoFactorialB);
+                printf("\n\n\t\t\t\tEL RESULTADO DEL FACTORIAL DEL SEGUNDO NUMERO ES: %lld\n\n", resultadoFactorialB);
 
             }
             break;

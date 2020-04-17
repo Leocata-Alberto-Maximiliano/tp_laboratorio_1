@@ -31,7 +31,7 @@ float dividir(float x, float y)
     return div;
 }
 
-int factorizar(int x)
+long long int factorizar(long long int x)
 {
     int i;
     int resultado;
