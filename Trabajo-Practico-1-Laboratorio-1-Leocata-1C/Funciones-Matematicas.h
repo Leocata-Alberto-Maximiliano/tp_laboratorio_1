@@ -38,16 +38,17 @@ float multiplicar(float, float);
  */
 float dividir(float, float);
 
-/** \brief CALCULA EL FACTORIAL DE UN NUMERO
+
+/** \brief CALCULA EL FACTORIAL DE UN NUMERO. NO CALCULA EL FACTORIAL DE NUMEROS DECIMALES NI DE NUMEROS MAYORES a 31.
  *
- * \param float
- * \return float
+ * \param long long int
+ * \return long long int
  *
  */
 long long int factorizar(long long int);
 
 
-/** \brief INDICA SI UN NUMERO POSEE CIFRAS DECIMALES
+/** \brief INDICA SI UN NUMERO POSEE CIFRAS DECIMALES. RETORNA "1" PARA VERDADERO, "0" PARA FALSO.
  *
  * \param float
  * \return int
