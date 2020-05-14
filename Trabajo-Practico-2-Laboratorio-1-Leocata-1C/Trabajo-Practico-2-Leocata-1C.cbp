@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="FunctionsEmployees.h" />
+		<Unit filename="UTN.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="UTN.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

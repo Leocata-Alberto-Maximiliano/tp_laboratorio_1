@@ -20,7 +20,7 @@ struct
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int initEmployees(Employee* list, int len);
+int initEmployees(Employee  lista[], int len);
 
 
 /** \brief add in a existing list of employees the values received as parameters
@@ -35,7 +35,7 @@ int initEmployees(Employee* list, int len);
  * \return int Return (-1) if Error [Invalid length or NULL pointer or without
 free space] - (0) if Ok
 **/
-int addEmployee(Employee* list, int len, int id, char name[],char lastName[],float salary,int sector);
+int addEmployee(Employee  lista[], int len, int id, char name[],char lastName[],float salary,int sector);
 
 
 /** \brief find an Employee by Id en returns the index position in array.
@@ -47,7 +47,7 @@ int addEmployee(Employee* list, int len, int id, char name[],char lastName[],flo
 pointer received or employee not found]
  *
  */
-int findEmployeeById(Employee* list, int len,int id);
+int findEmployeeById(Employee  lista[], int len,int id);
 
 
 /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
@@ -59,7 +59,7 @@ int findEmployeeById(Employee* list, int len,int id);
 find a employee] - (0) if Ok
  *
  */
-int removeEmployee(Employee* list, int len, int id);
+int removeEmployee(Employee  lista[], int len, int id);
 
 
 /** \brief Sort the elements in the array of employees, the argument order
@@ -71,7 +71,7 @@ indicate UP or DOWN order
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int sortEmployees(Employee* list, int len, int order);
+int sortEmployees(Employee  lista[], int len, int order);
 
 
 /** \brief print the content of employees array
@@ -81,4 +81,4 @@ int sortEmployees(Employee* list, int len, int order);
  * \return int
  *
  */
-int printEmployees(Employee* list, int length);
+int printEmployees(Employee  lista[], int length);
