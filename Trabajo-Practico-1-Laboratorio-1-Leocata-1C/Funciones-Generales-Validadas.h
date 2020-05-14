@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void menu(void);
+
 /** \brief SOLICITA UN NUMERO ENTERO AL USUARIO VALIDANDO UN RANGO DETERMINADO
  *
  * \param char[]

@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1587143706 source:c:\users\albert\desktop\tp_laboratorio_1\trabajo-practico-1-laboratorio-1-leocata-1c\funciones-matematicas.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones-Matematicas.h"
+
+1587144929 c:\users\albert\desktop\tp_laboratorio_1\trabajo-practico-1-laboratorio-1-leocata-1c\funciones-matematicas.h
+	<stdio.h>
+	<stdlib.h>
+
+1588817752 source:c:\users\albert\desktop\tp_laboratorio_1\trabajo-practico-1-laboratorio-1-leocata-1c\funciones-generales-validadas.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones-Generales-Validadas.h"
+
+1588817752 c:\users\albert\desktop\tp_laboratorio_1\trabajo-practico-1-laboratorio-1-leocata-1c\funciones-generales-validadas.h
+	<stdio.h>
+	<stdlib.h>
+
+1588818134 source:c:\users\albert\desktop\tp_laboratorio_1\trabajo-practico-1-laboratorio-1-leocata-1c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones-Generales-Validadas.h"
+	"Funciones-Matematicas.h"
+

@@ -17,37 +17,32 @@ int main()
     long long int resultadoFactorialA;
     long long int resultadoFactorialB;
 
-    int option;
+    char option;
 
     printf("\n***************\t\tBIENVENIDO A LA CALCULADORA\t\t***************\n\n\n");
 
     do
     {
 
-        printf("\n1.INGRESAR PRIMER OPERANDO");
-        printf("\n2.INGRESAR SEGUNDO OPERANDO");
-        printf("\n3.CALCULAR OPERACIONES");
-        printf("\n4.INFORMAR RESULTADOS");
-        printf("\n5.SALIR");
-
-        option = getInt("\n\n\t\tELIJA LA OPCION A REALIZAR: ", "\n\t\tERROR, ELIJA UNA OPCION VALIDA A REALIZAR: ", 1, 5);
+        menu();
+        option = getChar("\n\nELIJA LA OPCION: ", "ERROR, ELIJA UNA OPCION VALIDA: ", '1', '5');
 
         switch(option)
         {
 
-        case 1:
+        case '1':
 
             valueA = getFloat("\nINGRESE UN NUMERO: ", "\nERROR, INGRESE UN NUMERO VALIDO: \n\n", MIN, MAX);
 
             break;
 
-        case 2:
+        case '2':
 
             valueB = getFloat("\nINGRESE UN NUMERO: ", "\nERROR, INGRESE UN NUMERO VALIDO: \n\n", MIN, MAX);
 
             break;
 
-        case 3:
+        case '3':
 
             printf("\n\t\t***CALCULANDO OPERACIONES***\n\n");
 
@@ -60,7 +55,7 @@ int main()
 
             break;
 
-        case 4:
+        case '4':
 
             printf("\n\t\t***INFORMANDO RESULTADOS***");
 
@@ -102,7 +97,7 @@ int main()
             }
             break;
 
-        case 5:
+        case '5':
 
             printf("\n***************\t\tESTA SALIENDO DE LA CALCULADORA, HASTA PRONTO :)\t\t***************\n\n");
 
@@ -111,11 +106,11 @@ int main()
 
         }
 
-        system("pause");
-        system("cls");
+        ///system("pause");
+        ///system("cls");
 
 
-    }while(option != 5);
+    }while(option != '5');
 
 
 
