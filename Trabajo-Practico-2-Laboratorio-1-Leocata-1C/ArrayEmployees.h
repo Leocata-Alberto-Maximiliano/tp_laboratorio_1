@@ -2,15 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct
-{
+ typedef struct{
+
  int id;
  char name[51];
  char lastName[51];
  float salary;
  int sector;
  int isEmpty;
-}typedef Employee;
+
+} Employee;
 
 /** \brief To indicate that all position in the array are empty,
  * this function put the flag (isEmpty) in TRUE in all
@@ -35,7 +36,7 @@ int initEmployees(Employee  lista[], int len);
  * \return int Return (-1) if Error [Invalid length or NULL pointer or without
 free space] - (0) if Ok
 **/
-int addEmployee(Employee  lista[], int len, int id, char name[],char lastName[],float salary,int sector);
+/// int addEmployee(Employee  lista[], int len, int id, char name[],char lastName[],float salary,int sector);
 
 
 /** \brief find an Employee by Id en returns the index position in array.
@@ -47,7 +48,7 @@ int addEmployee(Employee  lista[], int len, int id, char name[],char lastName[],
 pointer received or employee not found]
  *
  */
-int findEmployeeById(Employee  lista[], int len,int id);
+int findEmployeeById(Employee  lista[], int len/*,int id*/);
 
 
 /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
@@ -59,7 +60,7 @@ int findEmployeeById(Employee  lista[], int len,int id);
 find a employee] - (0) if Ok
  *
  */
-int removeEmployee(Employee  lista[], int len, int id);
+int removeEmployee(Employee  lista[], int len/*, int id*/);
 
 
 /** \brief Sort the elements in the array of employees, the argument order
@@ -71,7 +72,7 @@ indicate UP or DOWN order
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int sortEmployees(Employee  lista[], int len, int order);
+int sortEmployees(Employee  lista[], int len/*, int order*/);
 
 
 /** \brief print the content of employees array
@@ -81,4 +82,6 @@ int sortEmployees(Employee  lista[], int len, int order);
  * \return int
  *
  */
-int printEmployees(Employee  lista[], int length);
+int printEmployees(Employee  lista[], int len);
+
+int printEmployee(Employee  employee);

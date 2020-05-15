@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1589492043 source:c:\users\albert\desktop\utn2020\tp_laboratorio_1\trabajo-practico-2-laboratorio-1-leocata-1c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
+1589570406 c:\users\albert\desktop\utn2020\tp_laboratorio_1\trabajo-practico-2-laboratorio-1-leocata-1c\arrayemployees.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589416734 source:c:\users\albert\desktop\utn2020\tp_laboratorio_1\trabajo-practico-2-laboratorio-1-leocata-1c\utn.c
+	"UTN.h"
+	<stdio.h>
+	<stdlib.h>
+
+1589416092 c:\users\albert\desktop\utn2020\tp_laboratorio_1\trabajo-practico-2-laboratorio-1-leocata-1c\utn.h
+
+1589570204 source:c:\users\albert\desktop\utn2020\tp_laboratorio_1\trabajo-practico-2-laboratorio-1-leocata-1c\arrayemployees.c
+	"ArrayEmployees.h"
+	"UTN.h"
+

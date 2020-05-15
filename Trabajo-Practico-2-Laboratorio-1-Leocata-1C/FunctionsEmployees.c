@@ -1,11 +1,33 @@
 #include "FunctionsEmployees.h"
+#include "ArrayEmployees.h"
 #include "UTN.h"
 #define FALSE 0
 #define TRUE 1
 
 int hardCodeEmployees(Employee lista[], int len)
 {
-// TERMINAR
+    int r = 0;
+
+    int ids[5] = {1,2,3,4,5};
+    char names[5][50] = {"ALBERTO","JAVIER","VIVIANA","LIHUE","PATRICIO"};
+    char lastNames[5][50] = {"LEOCATA","SANCHEZ","BARRIO","LOPEZ","OTEL"};
+    float salarys[5] = {24000.00,130000.00,50000.00,25000.00,60000.00};
+    int sectors[5] = {1,2,3,1,2};
+
+    int i;
+
+    for(i=0; i < len; i++)
+    {
+        lista[i].id = ids[i];
+        strcpy(lista[i].name, names[i]);
+        strcpy(lista[i].lastName, lastNames[i]);
+        lista[i].salary= salarys[i];
+        lista[i].sector = sectors[i];
+
+        r = 1;
+    }
+
+    return r;
 }
 
 //****************************************************************************************************************
@@ -32,45 +54,39 @@ int findEmptyPlaceEmployees(Employee lista[], int len, int value)
 
 int sortEmployeesUp(Employee lista[], int len)
 {
-    int succesfully = -1;
+    int r = -1;
     Employee employeeAux;
     int i;
     int j;
 
     for(i=0; i < len -1; i++)
     {
-
         if(lista[i].isEmpty == FALSE)
         {
-
             continue;
         }
 
         for(j=i+1; j < len; j++)
         {
-
             if(lista[j].isEmpty == FALSE)
             {
-
                 continue;
             }
 
             if(strcmp(lista[j].id, lista[i].id) > 0)
             {
-
-
                 employeeAux = lista[j];
                 lista[j] = lista[i];                  //bubbleSort
                 lista[i] = employeeAux;
 
-                succesfully = 0;
+                r = 0;
             }
 
         }
 
     }
 
-    return succesfully;
+    return r;
 }
 
 //***************************************************************************************************************
@@ -78,45 +94,39 @@ int sortEmployeesUp(Employee lista[], int len)
 int sortEmployeesDown(Employee lista[], int len)
 {
 
-    int succesfully = -1;
+    int r = -1;
     Employee employeeAux;
     int i;
     int j;
 
     for(i=0; i < len -1; i++)
     {
-
         if(lista[i].isEmpty == FALSE)
         {
-
             continue;
         }
 
         for(j=i+1; j < len; j++)
         {
-
             if(lista[j].isEmpty == FALSE)
             {
-
                 continue;
             }
 
             if(strcmp(lista[j].id, lista[i].id) > 0)
             {
-
-
                 employeeAux = lista[i];
                 lista[i] = lista[j];                  //bubbleSort
                 lista[j] = employeeAux;
 
-                succesfully = 0;
+                r = 0;
             }
 
         }
 
     }
 
-    return succesfully;
+    return r;
 }
 
 

@@ -1,8 +1,44 @@
 #include "ArrayEmployees.h"
+#include "UTN.h"
 #define TRUE 1
 #define FALSE 0
 #define UP 1
 #define DOWN 0
+
+int printEmployee(Employee  employee)
+{
+    int r = -1;
+    /// ID NAME LASTNAME SALARY SECTOR
+    if(employee.isEmpty == FALSE)
+    {
+        printf("\n%d\t\t%s\t\t%s\t\t%.2f\t\t%d");
+        r = 0;
+    }
+
+return r;
+}
+
+/** \brief print the content of employees array
+ *
+ * \param lista Employee*
+ * \param length int
+ * \return int
+ *
+ */
+int printEmployees(Employee lista[], int len)
+{
+    int r = -1;
+    int i;
+
+    printf("\nID\t\tNAME\t\tLASTNAME\t\tSALARY\t\tSECTOR\n");
+    for(i = 0; i < len; i++)
+    {
+        printEmployee(lista[i]);
+        r = 0;
+    }
+
+    return r;
+}
 
 //****************************************************************************************************************
 
@@ -17,24 +53,19 @@
 int initEmployees(Employee lista[], int len)
 {
 
-    int succesfully = -1;
-    int index;
+    int r = -1;
+    int i;
 
-    if(lista != NULL && len > 0)
+    for(i = 0; i < len; i++)
     {
 
-        for(index = 0; index < len; index++)
-        {
+        lista[i].isEmpty = TRUE;
 
-            lista[index].isEmpty = TRUE;
-
-            succesfully = 0;
-
-        }
-
+        r = 0;
     }
 
-    return succesfully;
+
+    return r;
 
 }
 
@@ -52,9 +83,9 @@ int initEmployees(Employee lista[], int len)
  * \return int Return (-1) if Error [Invalid length or NULL pointer or without
 free space] - (0) if Ok
 **/
-int addEmployee(Employee lista[], int len, int id, char name[],char lastName[],float salary,int sector)
+/*int addEmployee(Employee lista[], int len, int id, char name[],char lastName[],float salary,int sector)
 {
-    int succesfully = -1;
+    int r = -1;
 
     int indexEmptyPlace = findEmptyPlaceEmployees(lista, len, FALSE);
 
@@ -67,11 +98,11 @@ int addEmployee(Employee lista[], int len, int id, char name[],char lastName[],f
         lista[indexEmptyPlace].salary = salary;
         lista[indexEmptyPlace].sector = sector;
 
-        succesfully = 0;
+        r = 0;
     }
 
-    return succesfully;
-}
+    return r;
+}*/
 
 //*****************************************************************************************************************
 
@@ -84,27 +115,28 @@ int addEmployee(Employee lista[], int len, int id, char name[],char lastName[],f
 pointer received or employee not found]
  *
  */
-int findEmployeeById(Employee lista[], int len,int id)
+int findEmployeeById(Employee lista[], int len /*,int id*/)
 {
-    int index;
-    int foundIndex = -1;
+    int indexResult = -1;
+    int id;
+    int i;
 
-    if(lista != NULL && len > 0)
+    printEmployees(lista, len);
+
+    id = getInt("\n\nINGRESE UN EMPLEADO POR SU ID: ", "\nERROR, REINGRESE UN EMPLEADO: ", 1, 1000);
+
+    for(i=0; i < len; i++)
     {
 
-        for(index=0; index < len; index++)
+        if(lista[i].id == id)
         {
 
-            if(lista[index].id == id && lista[index].isEmpty == FALSE)
-            {
-
-                foundIndex = index;
-                break;
-            }
+            indexResult = i;
+            break;
         }
     }
 
-    return index;
+    return i;
 
 }
 
@@ -119,22 +151,20 @@ int findEmployeeById(Employee lista[], int len,int id)
 find a employee] - (0) if Ok
  *
  */
-int removeEmployee(Employee lista[], int len, int id)
+int removeEmployee(Employee lista[], int len/*, int id*/)
 {
-    int succesfully;
-    int foundIndex;
-    succesfully = -1;
-    foundIndex = findEmployeeById(lista, len, id);
+    int r = -1;
+    int indexResult;
 
-    if(lista != NULL && len > 0 && foundIndex != -1)
+    indexResult = findEmployeeById(lista, len);
+
+    if(indexResult != -1)
     {
-
-        lista[foundIndex].isEmpty = TRUE;
-        succesfully = 0;
+        lista[indexResult].isEmpty = TRUE;
+        r = 0;
     }
 
-
-return succesfully;
+    return r;
 }
 
 //****************************************************************************************************************
@@ -148,52 +178,27 @@ indicate UP or DOWN order
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int sortEmployees(Employee lista[], int len, int order)
+int sortEmployees(Employee lista[], int len/*, int order*/)
 {
-    int succesfully;
+    int r;
+    int orden;
+    orden = getInt("\n\nELIJA EL CRITERIO DE ORDENAMIENTO ", "ERROR, REILIJA EL CRITERIO DE ORDENAMIENTO ", 1, 2);
 
-    if(lista != NULL && len > 0 && order == UP)
+    switch(orden)
     {
+    case 1:
+        r = sortEmployeesUp(lista, len);
+        break;
 
-        succesfully = sortEmployeesUp(lista, len);
+    case 2:
+        r = sortEmployeesDown(lista, len);
+        break;
 
     }
 
-    if(lista != NULL && len > 0 && order == DOWN)
-    {
-
-        succesfully = sortEmployeesDown(lista, len);
-
-    }
-
-    return succesfully;
+    return r;
 }
 
 //****************************************************************************************************************
-
-/** \brief print the content of employees array
- *
- * \param lista Employee*
- * \param length int
- * \return int
- *
- */
-int printEmployees(Employee lista[], int len)
-{
-    int succesfully = -1;
-
-    if(lista != NULL && len > 0)
-    {
-
-        // ACA EL CODIGO
-
-        succesfully = 0;
-    }
-
-
-    return succesfully;
-}
-
-
 
 
